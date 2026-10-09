@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>API Client - Lab 6</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>JSONPlaceholder API Client</h1>
+
+>     <!-- Параллельные запросы (Promise.all) -->
+    <section class="card">
+      <h3>Параллельные данные (Promise.all)</h3>
+      <button id="load-parallel-btn">Загрузить посты и пользователей вместе</button>
+      <div id="parallel-result" class="output"></div>
+    </section>
+
+    <!-- Поиск / Фильтрация -->
+    <section class="card">
+      <h3>Поиск постов по ID пользователя</h3>
+      <div class="search-box">
+        <input type="number" id="user-id-input" placeholder="Введите ID (например, 1-10)" min="1" max="10">
+        <button id="search-btn">Найти</button>
+      </div>
+    </section>
+
+    <!-- Статус загрузки и ошибки -->
+    <div id="loading" class="hidden">Загрузка данных...</div>
+    <div id="error" class="hidden error-msg"></div>
+
+    <!-- Список элементов -->
+    <h2>Список постов</h2>
+    <div id="posts-container" class="grid"></div>
+
+    <!-- Детали элемента -->
+    <div id="details-modal" class="modal hidden">
+      <div class="modal-content">
+        <button id="close-modal">Закрыть</button>
+        <div id="modal-body"></div>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
